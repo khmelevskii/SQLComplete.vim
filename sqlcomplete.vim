@@ -123,11 +123,11 @@ endif
 if !exists('g:omni_sql_precache_syntax_groups')
     let g:omni_sql_precache_syntax_groups = [
                 \ 'syntax',
-                \ 'sqlKeyword',
-                \ 'sqlFunction',
-                \ 'sqlOption',
-                \ 'sqlType',
-                \ 'sqlStatement'
+                \ 'pgsqlKeyword',
+                \ 'pgsqlFunction',
+                \ 'pgsqlOption',
+                \ 'pgsqlType',
+                \ 'pgsqlStatement'
                 \ ]
 endif
 " Set ignorecase to the ftplugin standard
@@ -555,6 +555,7 @@ function! sqlcomplete#Map(type)
         " does not interfere with other ftplugins settings
         let b:sql_compl_savefunc=&omnifunc
     endif
+
     " Set the OMNI func for the SQL completion plugin
     let &omnifunc='sqlcomplete#Complete'
 endfunction
